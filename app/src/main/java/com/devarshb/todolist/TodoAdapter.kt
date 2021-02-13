@@ -33,6 +33,7 @@ class TodoAdapter(
         todos.removeAll { todo ->
             todo.isChecked
         }
+        notifyDataSetChanged()
     }
 
     //Function to check-out the to-do item when checked = true
