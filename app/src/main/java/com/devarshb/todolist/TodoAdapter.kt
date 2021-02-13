@@ -24,6 +24,17 @@ class TodoAdapter(
         )
     }
 
+    fun addTodo(todo: Todo) {
+        todos.add(todo)
+        notifyItemInserted(todos.size - 1)
+    }
+
+    fun deleteDoneTodos() {
+        todos.removeAll { todo ->
+            todo.isChecked
+        }
+    }
+
     //Function to check-out the to-do item when checked = true
     private fun toggleStrikeThrough(tvTodoTitle: TextView, isChecked: Boolean) {
         if(isChecked) {
